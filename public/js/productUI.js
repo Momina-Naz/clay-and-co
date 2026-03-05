@@ -6,9 +6,14 @@ import { getProducts } from './productService.js'
 export function renderProducts(products) {
   const productsContainer = document.getElementById('products-container')
   const cards = products.map((product) => {
+    // Check if image is a full URL (Cloudinary) or local path
+    const imageSrc = product.image.startsWith('http') 
+      ? product.image 
+      : `./images/${product.image}`
+    
     return `
       <div class="product-card">
-        <img src="./images/${product.image}" alt="${product.title}">
+        <img src="${imageSrc}" alt="${product.title}">
         <h2>${product.title}</h2>
         <h3>by ${product.artist}</h3>
         <p>$${product.price}</p>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet">
+  <title>Add Product - Clay & Co.</title>
+</head>
+<body>
+  <div class="top-banner">
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <img src="images/menu.svg" alt="">
+    </button>
+    <nav class="header-menu" aria-label="Main menu">
+      <a href="/">Home</a>
+      <a href="/cart.html" id="cart-banner">Cart</a>
+      <a href="/login.html" id="login">Log in</a>
+      <a href="/signup.html" id="signup">Sign up</a>
+      <a href="/add-product.html" id="add-product-link" style="display: none;">Add product</a>
+      <button class="main-btn" id="logout-btn">Log out</button>
+    </nav>
+  </div>
+
+  <header>
+    <a href="/"><img src="/images/decorative-five.jpg" alt="Clay & Co. Logo"
+      style="width: 160px; height: 160px; object-fit: cover; border-radius: 12px;"></a>
+    <div class="header-text">
+      <h1>Add a New Product</h1>
+      <p class="subhead">List a new handmade piece for sale</p>
+    </div>
+  </header>
+
+  <main class="sign-forms">
+    <form class="sign-form" id="add-product-form" autocomplete="off">
+      <div class="form-inner">
+        <h2>Product details</h2>
+
+        <label for="product-title">Title</label>
+        <input type="text" id="product-title" name="title" required>
+
+        <label for="product-artist">Artist / Maker</label>
+        <input type="text" id="product-artist" name="artist" required>
+
+        <label for="product-category">Category</label>
+        <select id="product-category" name="category" required>
+          <option value="">Select a category</option>
+          <option value="Cups">Cups</option>
+          <option value="Plates">Plates</option>
+          <option value="Bowls">Bowls</option>
+          <option value="Vases">Vases</option>
+          <option value="Decorative">Decorative</option>
+        </select>
+
+        <label for="product-price">Price (USD)</label>
+        <input type="number" id="product-price" name="price" min="0.01" step="0.01" required>
+
+        <label for="product-image-file">Product image</label>
+        <input type="file" id="product-image-file" accept="image/*">
+
+        <label for="product-image">Image URL</label>
+        <input
+          type="text"
+          id="product-image"
+          name="image"
+          placeholder="Filled after upload"
+          readonly
+        >
+        <small class="field-hint">Upload an image; we’ll generate the URL automatically.</small>
+
+        <label for="product-description">Description (optional)</label>
+        <textarea id="product-description" name="description" rows="3"></textarea>
+
+        <button type="submit" class="form-btn">Create Product</button>
+        <p id="success-message" class="success"></p>
+        <p id="error-message" class="error"></p>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>© Clay & Co.</p>
+  </footer>
+
+  <script src="js/menu.js" type="module"></script>
+  <script src="js/add-product.js" type="module"></script>
+</body>
+</html>
+
