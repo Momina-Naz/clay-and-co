@@ -131,7 +131,7 @@ footer {
     align-items: stretch;
     justify-items: center;
     justify-content: center;
-    gap: 0.75em 0.75em;
+gap: 1.5em 1.5em;
     max-width: 1800px;
     margin: 0 auto;
     
@@ -253,6 +253,7 @@ footer {
     width: 100%;
     height: 240px;
     object-fit: cover;
+    object-position: center center;
     border-radius: var(--radius-md);
     margin-bottom: 0.5rem;
 }
@@ -364,15 +365,15 @@ button:active {
    Media Queries
 ----------------------------------- */
 
-/* Desktop - Apply 330px width to product cards */
+/* Desktop - Apply 300px width to product cards */
 @media (min-width: 900px) {
     .product-card {
-        width: 330px;
-        max-width: 330px;
+        width: 300px;
+        max-width: 300px;
     }
     
     .product-card img {
-        height: 240px;
+        height: 210px;
     }
 }
 
@@ -389,13 +390,13 @@ button:active {
 
 @media (min-width: 1200px) {
     .products {
-        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     }
 }
 
 @media (min-width: 900px) and (max-width: 1199px) {
     .products {
-        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     }
 }
 
